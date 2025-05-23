@@ -115,7 +115,7 @@ public class Main {
         return arr;
     }
 
-                      // Вызовы
+                       // Вызовы
 
 
     public static void main(String[] args) {
@@ -185,7 +185,6 @@ public class Main {
         System.out.println();
     }
 }
-
 
 
 
