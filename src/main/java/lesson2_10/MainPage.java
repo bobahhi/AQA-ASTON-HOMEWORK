@@ -37,9 +37,12 @@ public class MainPage {
 
     public void selectPaymentTab(String tabName) {
         driver.findElement(selectHeader).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".select__list[style*='opacity: 1']")));
         List<WebElement> tabs = driver.findElements(payTabs);
         for (WebElement tab : tabs) {
             if (tab.getText().trim().equals(tabName)) {
+                ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", tab);
+                wait.until(ExpectedConditions.elementToBeClickable(tab));
                 tab.click();
                 break;
             }
